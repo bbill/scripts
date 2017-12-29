@@ -12,7 +12,7 @@ if len(sys.argv) < 3:
 
 USERNAME = 'admin@internal'
 PASSWORD = sys.argv[1]
-URL = 'https://localhost/api'
+URL = 'https://localhost/ovirt-engine/api'
 
 vms=[]
 users=[]
@@ -56,7 +56,7 @@ def addpermission(vm, user, role):
             continue
 
 try:
-    for i in range(len(vms)+1):
+    for i in range(len(vms)):
     	addpermission(vms[i-1], users[i-1], roles[i-1])
     exit(0)
 except Exception as e:
